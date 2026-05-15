@@ -1,38 +1,1100 @@
+/* ============================================
+   RESET E ESTILOS GLOBAIS
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* ============================================
+   COMPONENTE: LOGIN
+   ============================================ */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
+  padding: 20px;
+}
+
+.login-box {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 450px;
+}
+
+.login-box h2 {
+  color: #667eea;
+  margin-bottom: 10px;
+}
+
+.subtitulo {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* ============================================
+   FORMULÁRIOS (Geral)
+   ============================================ */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+/* ============================================
+   BOTÕES GERAIS
+   ============================================ */
+.btn-login {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.btn-login:hover {
+  transform: translateY(-2px);
+}
+
+.btn-sair {
+  padding: 10px 20px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-sair:hover {
+  background: #c0392b;
+}
+
+.btn-voltar {
+  padding: 10px 20px;
+  background: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-voltar:hover {
+  background: #5a6268;
+}
+
+.btn-acao {
+  flex: 1;
+  padding: 20px;
+  background: white;
+  border: 2px solid #667eea;
+  color: #667eea;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-acao:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.btn-checkin {
+  padding: 12px 25px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-checkin:hover {
+  background: #218838;
+  transform: scale(1.05);
+}
+
+.btn-checkin:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-checkout {
+  padding: 12px 25px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-checkout:hover {
+  background: #c82333;
+  transform: scale(1.05);
+}
+
+.btn-reservar {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: transform 0.2s;
+}
+
+.btn-reservar:hover {
+  transform: translateY(-2px);
+}
+
+.btn-proximo {
+  flex: 1;
+  padding: 14px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.btn-proximo:hover {
+  transform: translateY(-2px);
+}
+
+.btn-voltar-passo {
+  padding: 14px 25px;
+  background: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-voltar-passo:hover {
+  background: #5a6268;
+}
+
+.btn-cadastrar {
+  flex: 1;
+  padding: 14px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.btn-cadastrar:hover {
+  background: #218838;
+  transform: translateY(-2px);
+}
+
+.btn-filtro {
+  padding: 10px 20px;
+  background: #f8f9fa;
+  border: 2px solid #e0e0e0;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-filtro.ativo {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+/* ============================================
+   MENSAGENS DE ERRO E SUCESSO
+   ============================================ */
+.erro-mensagem {
+  color: #e74c3c;
+  background: #fde8e8;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.sucesso-mensagem {
+  background: #d4edda;
+  color: #155724;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* ============================================
+   INFORMAÇÕES ÚTEIS (Login)
+   ============================================ */
+.info-uteis {
+  margin-top: 30px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.info-uteis h4 {
+  color: #667eea;
+  margin-bottom: 10px;
+}
+
+.info-uteis ul {
+  list-style-position: inside;
+  color: #666;
+}
+
+.info-uteis li {
+  margin-bottom: 5px;
+}
+
+/* ============================================
+   LINKS DE NAVEGAÇÃO
+   ============================================ */
+.link-cadastro {
+  text-align: center;
+  margin-top: 20px;
+  color: #666;
+}
+
+.link-cadastro .link,
+.link-login .link {
+  color: #667eea;
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.link-cadastro .link:hover,
+.link-login .link:hover {
+  color: #764ba2;
+}
+
+.link-termos {
+  color: #667eea;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.link-termos:hover {
+  color: #764ba2;
+}
+
+/* ============================================
+   COMPONENTE: DASHBOARD
+   ============================================ */
+.dashboard-container {
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+.dashboard-header {
+  background: white;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.dashboard-header h1 {
+  color: #667eea;
+}
+
+.usuario-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.usuario-info span {
+  color: #666;
+  font-weight: 500;
+}
+
+.dashboard-content {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.acoes-rapidas {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.info-modalidade {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.info-modalidade h3 {
+  color: #667eea;
+  margin-bottom: 10px;
+}
+
+.limites {
+  display: flex;
+  gap: 30px;
+  color: #666;
+}
+
+.reservas-ativas {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.reservas-ativas h3 {
+  color: #667eea;
+  margin-bottom: 20px;
+}
+
+.lista-reservas {
   display: flex;
   flex-direction: column;
+  gap: 15px;
+}
+
+/* ============================================
+   CARDS DE RESERVA
+   ============================================ */
+.reserva-card {
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  border-left: 5px solid;
+  transition: transform 0.2s;
+}
+
+.reserva-card:hover {
+  transform: translateX(5px);
+}
+
+.status-pendente {
+  background: #fff3cd;
+  border-left-color: #ffc107;
+}
+
+.status-em_uso {
+  background: #d4edda;
+  border-left-color: #28a745;
+}
+
+.status-finalizada {
+  background: #f8f9fa;
+  border-left-color: #6c757d;
+}
+
+.status-expirada {
+  background: #f8d7da;
+  border-left-color: #dc3545;
+}
+
+.reserva-info h4 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.reserva-info p {
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.reserva-acoes {
+  display: flex;
+  gap: 10px;
+}
+
+/* ============================================
+   STATUS BADGES
+   ============================================ */
+.status-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.status-badge.pendente,
+.status-badge.agendada {
+  background: #ffc107;
+  color: #000;
+}
+
+.status-badge.em_uso,
+.status-badge.disponivel {
+  background: #28a745;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.status-badge.finalizada {
+  background: #6c757d;
+  color: white;
 }
 
-@keyframes App-logo-spin {
+.status-badge.atrasada,
+.status-badge.expirada {
+  background: #dc3545;
+  color: white;
+}
+
+.status-badge.ativo {
+  background: #28a745;
+  color: white;
+}
+
+/* ============================================
+   MODAL DE CHECK-IN/OUT
+   ============================================ */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+.modal-content h3 {
+  color: #667eea;
+  margin-bottom: 20px;
+}
+
+.timer-display {
+  font-size: 48px;
+  text-align: center;
+  color: #667eea;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+.timer-warning {
+  color: #dc3545;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* ============================================
+   COMPONENTE: RESERVA (Salas e Computadores)
+   ============================================ */
+.reserva-container {
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+.reserva-header {
+  background: white;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.reserva-header h2 {
+  color: #667eea;
+}
+
+.regras-reserva {
+  background: white;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.regras-reserva h4 {
+  color: #667eea;
+  margin-bottom: 10px;
+}
+
+.regras-reserva ul {
+  list-style-position: inside;
+  color: #666;
+}
+
+.regras-reserva li {
+  margin-bottom: 5px;
+}
+
+.reserva-form {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* ============================================
+   COMPONENTE: CADASTRO
+   ============================================ */
+.cadastro-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.cadastro-box {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 600px;
+}
+
+.cadastro-box h2 {
+  color: #667eea;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Barra de Progresso do Cadastro */
+.progresso-cadastro {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
+  position: relative;
+}
+
+.progresso-cadastro::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #e0e0e0;
+  z-index: 1;
+}
+
+.passo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  position: relative;
+  z-index: 2;
+  font-size: 14px;
+  color: #999;
+}
+
+.passo span {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  color: #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.passo.ativo span {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.passo.ativo {
+  color: #667eea;
+  font-weight: 600;
+}
+
+.passo-form h3 {
+  color: #667eea;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.info-modalidade-cadastro {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.info-modalidade-cadastro h4 {
+  color: #667eea;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.info-modalidade-cadastro ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info-modalidade-cadastro li {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 5px;
+  padding-left: 15px;
+  position: relative;
+}
+
+.info-modalidade-cadastro li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+}
+
+.botoes-navegacao {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.termos-checkbox {
+  margin: 20px 0;
+  text-align: left;
+}
+
+.termos-checkbox label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #666;
+}
+
+.termos-checkbox input[type="checkbox"] {
+  width: auto;
+}
+
+.link-login {
+  text-align: center;
+  margin-top: 20px;
+  color: #666;
+}
+
+/* ============================================
+   COMPONENTE: TERMOS DE USO
+   ============================================ */
+.termos-container {
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+.termos-header {
+  background: white;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.termos-header h2 {
+  color: #667eea;
+}
+
+.termos-content {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 20px auto;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.termos-content h3 {
+  color: #667eea;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.termos-content section {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.termos-content h4 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.termos-content ul {
+  list-style-position: inside;
+  color: #666;
+  line-height: 1.8;
+}
+
+.termos-content li {
+  margin-bottom: 8px;
+}
+
+.termos-aceite {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  color: #666;
+  font-weight: 500;
+}
+
+/* ============================================
+   COMPONENTE: ADMIN
+   ============================================ */
+.admin-container {
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+.admin-content {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.filtros {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.filtros h3 {
+  color: #667eea;
+  margin-bottom: 15px;
+}
+
+.botoes-filtro {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.tabela-usuarios {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  overflow-x: auto;
+}
+
+.tabela-usuarios h3 {
+  color: #667eea;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+  background: #f8f9fa;
+  color: #667eea;
+  font-weight: 600;
+}
+
+tr:hover {
+  background: #f8f9fa;
+}
+
+/* Badges de Modalidade */
+.badge-modalidade {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.badge-modalidade.técnico { 
+  background: #e3f2fd; 
+  color: #1976d2; 
+}
+
+.badge-modalidade.graduação { 
+  background: #f3e5f5; 
+  color: #7b1fa2; 
+}
+
+.badge-modalidade.básica { 
+  background: #e8f5e9; 
+  color: #388e3c; 
+}
+
+.badge-modalidade.qualificação { 
+  background: #fff3e0; 
+  color: #f57c00; 
+}
+
+.badge-modalidade.ejas { 
+  background: #fce4ec; 
+  color: #c2185b; 
+}
+
+/* ============================================
+   RESPONSIVIDADE
+   ============================================ */
+@media (max-width: 768px) {
+  .dashboard-content {
+    padding: 20px;
+  }
+  
+  .acoes-rapidas {
+    flex-direction: column;
+  }
+  
+  .reserva-card {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .limites {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .usuario-info {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .reserva-header,
+  .termos-header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .botoes-navegacao {
+    flex-direction: column;
+  }
+
+  .modal-content {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .timer-display {
+    font-size: 36px;
+  }
+
+  .cadastro-box {
+    padding: 20px;
+  }
+
+  .progresso-cadastro {
+    font-size: 12px;
+  }
+
+  .passo span {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-box {
+    padding: 20px;
+  }
+
+  .btn-acao {
+    padding: 15px;
+    font-size: 16px;
+  }
+
+  .reserva-form {
+    padding: 20px;
+  }
+
+  .termos-content {
+    padding: 20px;
+  }
+
+  .timer-display {
+    font-size: 28px;
+  }
+}
+
+/* ============================================
+   ANIMAÇÕES
+   ============================================ */
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(-10px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
+}
+
+.reserva-card {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content {
+  animation: fadeIn 0.2s ease-out;
+}
+
+.erro-mensagem,
+.sucesso-mensagem {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* ============================================
+   UTILITÁRIOS
+   ============================================ */
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
 }
